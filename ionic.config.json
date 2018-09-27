@@ -1,0 +1,25 @@
+{
+  "name": "ionic_maps",
+  "integrations": {},
+  "v2": false,
+  "typescript": false,
+  "watch": {
+    "sass": [
+      "scss/**/*.scss"
+    ],
+    "html": [
+      "www/**/*.html"
+    ],
+    "livereload": [
+      "www/**/*.html",
+      "www/**/*.js",
+      "www/**/*.css"
+    ]
+  },
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}
