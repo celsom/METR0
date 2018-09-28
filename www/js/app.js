@@ -38,6 +38,11 @@ angular.module('starter', [
     controller: 'MapCtrl'
   })
 
+  .state('home', {
+    url: '/home',
+    templateUrl: "views/home.html",
+  })
+
   .state('place', {
     url: '/place/:placeId',
     templateUrl: "views/place.html",
@@ -49,5 +54,5 @@ angular.module('starter', [
     }
   })
 
-  $urlRouterProvider.otherwise('/map');
+  $urlRouterProvider.otherwise('/home');
 })

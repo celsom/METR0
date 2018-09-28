@@ -1,5 +1,14 @@
 $map-height: 85%;
+$bg-metro: unquote('#ffb600f0');
 
+.metro {
+}
+
+.bar {
+  &.bar-dark {
+    background: $bg-metro;
+  }
+}
 .example-content
 {
   .scroll
@@ -10,7 +19,7 @@ $map-height: 85%;
 
 .geolocation-row
 {
-  @include calc(height, "(100% - #{$map-height})");
+  // @include calc(height, "(100% - #{$map-height})");
 
   .geolocation-button
   {

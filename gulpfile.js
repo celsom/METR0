@@ -17,7 +17,7 @@ gulp.task('serve:before', ['default']);
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src('./scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
