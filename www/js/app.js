@@ -38,6 +38,12 @@ angular.module('starter', [
     controller: 'MapCtrl'
   })
 
+  .state('nhome', {
+    url: '/nhome',
+    templateUrl: "views/destination.html",
+    controller: 'MapCtrl'
+  })
+
   .state('home', {
     url: '/home',
     templateUrl: "views/home.html",
