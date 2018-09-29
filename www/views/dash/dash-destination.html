@@ -19,10 +19,8 @@
     </label>
     <label class="item item-input">
       <span class="input-label">Seleccione a Paragem</span>
-      <select class="form-control" name='state' required id="state" class="form-control" ng-model="state" ng-options="state as state.StateName for state in states">
+      <select class="form-control" name='state' required id="state" class="form-control" ng-disabled="states.length == 0" ng-model="state" ng-options="state as state.StateName for state in states">
         <option value="">-seleccione-</option>
-        <option value="Boane">Boane</option>
-        <option value="Matola-Gare">Matola-Gare</option>
       </select>
     </label>
     <center> 

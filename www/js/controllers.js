@@ -7,24 +7,68 @@ angular.module('controllers', [])
     $scope.city = {};
     var allCountries = [{
         Id: 1,
-        CountryName: "USA"
+        CountryName: "PRAÇA DOS HERÓIS"
     }, {
         Id: 2,
-        CountryName: "Australia"
-    }];
-    var allStates = [{
-        Id: 1,
-        StateName: "Washington",
-        CountryId: 1
-    }, {
-        Id: 2,
-        StateName: "New York",
-        CountryId: 1
+        CountryName: "COSTA DO SOL"
     }, {
         Id: 3,
-        StateName: "Queensland",
-        CountryId: 2
+        CountryName: "STANDARD BANK"
+    }, {
+        Id: 4,
+        CountryName: "MUSEU"
     }];
+    var allStates = [
+      {Id:1,
+        StateName: "MINISTERIO DA JUSTICA",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "POLANA SHOPPING",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "BARCLAYS",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "CINEMA XENON",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "BOMBAS TOTAL",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "DESTACAMENTO FEMENINO",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "UEM",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "CAFE SOL",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "BIM",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "SOVESTE",
+        CountryId: 1
+      },
+      {Id:1,
+        StateName: "RONIL",
+        CountryId: 1
+      },
+      {
+        Id:1,
+        StateName: "MAVALANE",
+        CountryId: 1
+      }
+    ];
     var allCities = [{
         Id: 1,
         CityName: "Washington DC",
@@ -53,7 +97,7 @@ angular.module('controllers', [])
 
     $scope.$watch('state', function () {
         $scope.cities = allCities.filter(function (c) {
-          console.log("st "+c.StateId);
+          console.log('states');
             return c.StateId == $scope.state.Id;
         });
         $scope.city = {};
