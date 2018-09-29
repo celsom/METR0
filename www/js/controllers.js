@@ -1,5 +1,66 @@
 angular.module('controllers', [])
 
+// controller to populate start
+.controller('AjaxCtrl', function($scope){
+  $scope.country = {};
+    $scope.state = {};
+    $scope.city = {};
+    var allCountries = [{
+        Id: 1,
+        CountryName: "USA"
+    }, {
+        Id: 2,
+        CountryName: "Australia"
+    }];
+    var allStates = [{
+        Id: 1,
+        StateName: "Washington",
+        CountryId: 1
+    }, {
+        Id: 2,
+        StateName: "New York",
+        CountryId: 1
+    }, {
+        Id: 3,
+        StateName: "Queensland",
+        CountryId: 2
+    }];
+    var allCities = [{
+        Id: 1,
+        CityName: "Washington DC",
+        StateId: 1
+    }, {
+        Id: 2,
+        CityName: "New York City",
+        StateId: 2
+    }, {
+        Id: 3,
+        CityName: "Brisbane",
+        StateId: 3
+    } ];
+
+    $scope.countries = allCountries;
+
+    $scope.$watch('country', function () {
+        $scope.states = allStates.filter(function (s) {
+          console.log(s.CountryId);
+            return s.CountryId == $scope.country.Id;
+        });
+        $scope.city = {};
+        $scope.state = {};
+        $scope.cities = [];
+    });
+
+    $scope.$watch('state', function () {
+        $scope.cities = allCities.filter(function (c) {
+          console.log("st "+c.StateId);
+            return c.StateId == $scope.state.Id;
+        });
+        $scope.city = {};
+    });
+})
+// controller to populate end.
+
 .controller('PlaceCtrl', function($scope, place){
   $scope.place = place;
 })

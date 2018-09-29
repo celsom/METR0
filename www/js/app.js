@@ -41,13 +41,50 @@ angular.module('starter', [
   .state('nhome', {
     url: '/nhome',
     templateUrl: "views/destination.html",
-    controller: 'MapCtrl'
+    controller: 'AjaxCtrl'
   })
 
   .state('home', {
+    abstract: true,
     url: '/home',
-    templateUrl: "views/home.html",
+    templateUrl: "views/dash/dash.html",
   })
+
+  .state('home.dash', {
+      url: "/dashboard",
+      views: {
+        "tab-dest": {
+          templateUrl: "views/dash/dash-destination.html"
+        }
+      }
+    })
+
+  // states for the dashbord buttons
+  .state('dashboard', {
+    url: '/dashboard',
+    abstract: true,
+    templateUrl: 'views/dash/dash.html'
+  })
+
+  .state('dashboard.destination', {
+    url: '/destination',
+    views: {
+      'tab-dash': {
+        templateUrl: 'views/dash/dash-destination.html',
+        controller: 'DashCtrl'
+      }
+    }
+  })
+
+  // .state('tab.chats', {
+  //     url: '/chats',
+  //     views: {
+  //       'tab-chats': {
+  //         templateUrl: 'views/tab-chats.html',
+  //         controller: 'ChatsCtrl'
+  //       }
+  //     }
+  //   })
 
   .state('place', {
     url: '/place/:placeId',
@@ -60,5 +97,5 @@ angular.module('starter', [
     }
   })
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/home/dashboard');
 })

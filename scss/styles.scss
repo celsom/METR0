@@ -1,14 +1,10 @@
 $map-height: 85%;
-$bg-metro: unquote('#ffb600f0');
+$bg-metro: unquote('#fdb813');
 
-.metro {
+.bar-metro {
+  background-color: $bg-metro;
 }
 
-.bar {
-  &.bar-dark {
-    background: $bg-metro;
-  }
-}
 .example-content
 {
   .scroll
