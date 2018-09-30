@@ -1,19 +1,21 @@
 <ion-view view-title="MetroBus App">
+
   <ion-content class="example-content">
     <div class="row geolocation-row">
-      <div class="col col-75">
-        <img src="../img/metrobuslogo.png" style="height: 100px; width: 100px;">
-      </div>
-      <div class="col col-center">
-        <button class="geolocation-button button button-block button-positive" ng-click="tryGeoLocation()">
-          My Location
-        </button>
+      <div ng-click="tryGeoLocation()">
+        <!--  My Location? -->
+
       </div>
     </div>
 
-    <div class="row row-no-padding map-row">
+
+
+    </div>
+
+
+    <div class="row row-no-padding map-row overlay">
       <div class="col map-col">
-        <div class="search-container">
+        <!--  <div class="search-container">
           <div class="list list-inset search-input-outer">
             <label class="item item-input search-box">
               <i class="icon ion-ios-search placeholder-icon"></i>
@@ -31,15 +33,56 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="map-container" data-tap-disabled="true">
+        </div> -->
+        <!-- <div class="map-container" data-tap-disabled="true">
           <ng-map class="map" zoom="14" center="[{{latitude}}, {{longitude}}]" zoom-control="true" scale-control="false" map-type-control="false" street-view-control="false" map-initialized="init(map)">
             <custom-marker ng-repeat="cm in customMarkers" position="[{{cm.lat}}, {{cm.lng}}]" class="{{cm.class}}">
               <h3 class="marker-title">{{cm.text}}</h3>
             </custom-marker>
           </ng-map>
-        </div>
+        </div> -->
+
+        <!--     Showing current location with infoWindow<br/>
+          Note: This example requires that you consent to location sharing when
+          prompted by your browser. If you see a blank space instead of the map, this
+          is probably because you have denied permission for location sharing.
+          <br/>
+          <ng-map zoom="10" default-style="true" center="current-location" zoom="6">
+            <info-window position="current-location">
+              <span>Location found using HTML5.</span>
+            </info-window>
+          </ng-map> -->
+
+        <ng-map zoom="14" center="-25.953724,32.588711">
+
+ 
+          <directions draggable="true" travel-mode="WALKING" origin="current-location" destination="{{teste}}">
+
+          </directions>
+
+
+        </ng-map>
+
+
+
+
+
+        <br />
+        <br />
+        <!--   <ng-map zoom="14" center="37.7699298, -122.4469157" >
+            <directions
+              draggable="true"
+              travel-mode="DRIVING"
+              origin="Ottawa, Canada"
+              destination="current-location">
+            </directions>
+          </ng-map> -->
+        <button class="col col button button-block button-positive" n>Verifique</button>
+
+
       </div>
+
+
     </div>
   </ion-content>
 </ion-view>

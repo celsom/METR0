@@ -1,32 +1,31 @@
-<ion-view view-title="Dashboard" ng-controller="AjaxCtrl">
+<ion-view view-title="MetroBus App" ng-controller="AjaxCtrl">
   <ion-content class="padding">
     <center>
       <img class="logo" src="./img/metrobuslogo.png" alt="">
       <h2>Bem Vindo ao MetroApp</h2>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>.
       </p>
     </center>
-    <label class="item item-input">
-      <span class="input-label">Selecione o Destino</span>
-      <select class="form-control" name='country' id="country" class="form-control" ng-model="country" ng-options="country as country.CountryName for country in countries">
-        <option value="">-seleccione-</option>
-       <!--  <option value="PRAÇA DOS HERÓIS">PRAÇA DOS HERÓIS</option>
-        <option value="COSTA DO SOL">COSTA DO SOL</option>
-        <option value="MUSEU">MUSEU</option>
-        <option value="STANDARD BANK">STANDARD BANK</option> -->
+    <label class="item item-input item-select">
+      <span class="input-label">Destination?</span>
+      <select ng-model="item.route" ng-change="getBusstopNames(item.route)">
+        <option value=''>Select</option>
+        <option ng-repeat="route in routeNames" value="{{ route }} ">{{route}}</option>
       </select>
     </label>
-    <label class="item item-input">
-      <span class="input-label">Seleccione a Paragem</span>
-      <select class="form-control" name='state' required id="state" class="form-control" ng-disabled="states.length == 0" ng-model="state" ng-options="state as state.StateName for state in states">
-        <option value="">-seleccione-</option>
+    <label class="item item-input item-select">
+      <span class="input-label">Bus Stop?</span>
+      <select ng-model="item.busstop" ng-change="getModelNames(item.route, item.busstop)" ng-disabled="!item.route">
+        <option value=''>Select</option>
+        <option ng-repeat="busstop in busstopNames" value="{{busstop}} ">{{busstop}}</option>
       </select>
     </label>
-    <center> 
-      <button class="button button-positive" style="margin-top: 20px;">
-        Verificar
+    <center>
+      <button class="button button-positive" style="margin-top: 20px; width: 200px" ng-click="myFunc()">
+        Verify
       </button>
+      <p>The button has been clicked {{item.busstop}} times.</p>
     </center>
   </ion-content>
 </ion-view>

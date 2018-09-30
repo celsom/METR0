@@ -1,124 +1,114 @@
 angular.module('controllers', [])
+  // controller to populate start
+  .controller('AjaxCtrl', function ($scope) {
+    $scope.master = {firstName:"John", lastName:"Doe"};
+    // item.busstop = "kkkkkkkkkk";
 
-// controller to populate start
-.controller('AjaxCtrl', function($scope){
-  $scope.country = {};
-    $scope.state = {};
-    $scope.city = {};
-    var allCountries = [{
-        Id: 1,
-        CountryName: "PRAÇA DOS HERÓIS"
-    }, {
-        Id: 2,
-        CountryName: "COSTA DO SOL"
-    }, {
-        Id: 3,
-        CountryName: "STANDARD BANK"
-    }, {
-        Id: 4,
-        CountryName: "MUSEU"
-    }];
-    var allStates = [
-      {Id:1,
-        StateName: "MINISTERIO DA JUSTICA",
-        CountryId: 1
+    $scope.item = {
+      route: '',
+      busstop: '',
+      model: ''
+    };
+
+    // Our hierarchical object of manufacturers, car sizes and model names
+    $scope.routes = {
+      "Estacao Central - Costa do Sol": {
+        "Ministerio da Justica": ["1"],
+        "Polana Shopping": ["2"],
+        "Barclays": ["3"],
+        "Cinema Xenon": ["4"],
+        "Bombas Total": ["5"],
+        "Destacamento Femenino": ["6"],
+        "Centro de Conferencias": ["7"],
+        "Maritimo": ["8"],
+        "Baia Mall": ["9"],
+        "Mercado do Peixe": ["10"],
+        "Baia Mall": ["11"],
+        "Triunfo": ["12"]
       },
-      {Id:1,
-        StateName: "POLANA SHOPPING",
-        CountryId: 1
+      "Estacao Central - Expresso C do Sol": {
+        "Naval": ["1"],
+        "Southern Su": ["2"],
+        "Maritimo": ["3"],
+        "Baia Mall": ["4"],
+        "Mercado do Peixe": ["5"],
+        "Triunfo": ["6"]
       },
-      {Id:1,
-        StateName: "BARCLAYS",
-        CountryId: 1
+      "Estacao central - Museu": {
+        "Pandora": ["1"],
+        "HCM": ["2"],
+        "Oftalmologia": ["3"],
+        "Milano": ["4"],
+        "Cemiterio": ["5"]
       },
-      {Id:1,
-        StateName: "CINEMA XENON",
-        CountryId: 1
+      "Estacao central - OMM": {
+        "Muncipio": ["1"],
+        "Ministerio do Trabalho": ["2"],
+        "Ronil": ["3"],
+        "Banco Unico": ["4"],
+        "Marien Ngouabi": ["5"],
+        "Capuchinho": ["6"],
+        "PH7 Coop": ["7"],
+        "OMM": ["8"],
+        "Icor": ["9"],
+        "TDM": ["10"]
       },
-      {Id:1,
-        StateName: "BOMBAS TOTAL",
-        CountryId: 1
-      },
-      {Id:1,
-        StateName: "DESTACAMENTO FEMENINO",
-        CountryId: 1
-      },
-      {Id:1,
-        StateName: "UEM",
-        CountryId: 1
-      },
-      {Id:1,
-        StateName: "CAFE SOL",
-        CountryId: 1
-      },
-      {Id:1,
-        StateName: "BIM",
-        CountryId: 1
-      },
-      {Id:1,
-        StateName: "SOVESTE",
-        CountryId: 1
-      },
-      {Id:1,
-        StateName: "RONIL",
-        CountryId: 1
-      },
-      {
-        Id:1,
-        StateName: "MAVALANE",
-        CountryId: 1
+    };
+
+    $scope.routeNames = [];
+    for (route in $scope.routes)
+      $scope.routeNames.push(route);
+
+    $scope.busstopNames = [];
+    // get busstop names by route
+    $scope.getBusstopNames = function (route) {
+      $scope.item.busstop = '';
+      $scope.item.model = '';
+      $scope.modelNames = [];
+      var result = [];
+      if ($scope.routes.hasOwnProperty(route)) {
+        for (busstop in $scope.routes[route])
+          result.push(busstop);
       }
-    ];
-    var allCities = [{
-        Id: 1,
-        CityName: "Washington DC",
-        StateId: 1
-    }, {
-        Id: 2,
-        CityName: "New York City",
-        StateId: 2
-    }, {
-        Id: 3,
-        CityName: "Brisbane",
-        StateId: 3
-    } ];
+      $scope.busstopNames = result;
+    };
 
-    $scope.countries = allCountries;
+    $scope.modelNames = [];
+    // get model names by route and busstop
+    $scope.getModelNames = function (route, busstop) {
+      var result = [];
+      if ($scope.routes[route].hasOwnProperty(busstop)) {
+        for (model in $scope.routes[route][busstop])
+          result.push($scope.routes[route][busstop][model]);
+      }
+      $scope.modelNames = result;
+    };
 
-    $scope.$watch('country', function () {
-        $scope.states = allStates.filter(function (s) {
-          console.log(s.CountryId);
-            return s.CountryId == $scope.country.Id;
-        });
-        $scope.city = {};
-        $scope.state = {};
-        $scope.cities = [];
-    });
+    $scope.count = 0;
+    $scope.myFunc = function () {
+      $scope.count++;
+    };
+  })
+  // controller to populate end.
 
-    $scope.$watch('state', function () {
-        $scope.cities = allCities.filter(function (c) {
-          console.log('states');
-            return c.StateId == $scope.state.Id;
-        });
-        $scope.city = {};
-    });
-})
-// controller to populate end.
+  .controller('PlaceCtrl', function ($scope, place) {
+    $scope.place = place;
+  })
 
-.controller('PlaceCtrl', function($scope, place){
-  $scope.place = place;
-})
-
-
-.controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, GooglePlacesService){
+  .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, GooglePlacesService){
   // Central Park location
+  $scope.teste = "Ministério da Justiça, Assuntos Constitucionais e Religiosos, Maputo, Moçambique";
   var maputo = {
-    lat: -25.953724,
-    lng: 32.588711
+    lat: -5.953724,
+    lng: 2.588711
   };
 
   $scope.mbclient = {} ;
 
+  // $scope.dummyDestination ={
+  //   lat1: -25.973250,
+  //   lng1: 2.572030
+  // }
 
   $scope.customMarkers = [
     {
@@ -245,12 +235,12 @@ angular.module('controllers', [])
 
 
 
-  $scope.tryGeoLocation = function(){
-    $ionicLoading.show({
-      template: 'Getting current position ...'
-    });
+  // $scope.tryGeoLocation = function(){
+  //   $ionicLoading.show({
+  //     template: 'Getting current position ...'
+  //   });
 
-  }
+  // }
 
    
 
@@ -260,26 +250,30 @@ angular.module('controllers', [])
   //     destination: "MCG Melbourne, Australia",
   //      showList: false
   // }
-  //   }
-    var request = {
-      origin: $scope.directions.origin,
-      destination: $scope.directions.destination,
-      travelMode: google.maps.DirectionsTravelMode.WALKING
-    };
-    
-    $scope.mbclient = $scope.directions.origin;
-    console.log (mbclient);
+    // }
 
-    directionsService.route(request, function (response, status) {
-      if (status === google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-        directionsDisplay.setMap($scope.map.control.getGMap());
-        directionsDisplay.setPanel(document.getElementById('directionsList'));
-        $scope.directions.showList = true;
-      } else {
-        alert('Google route unsuccesfull!');
-      }
-    });
+  // $scope.dummyDestination = $scope.directions.destination;
+
+    // var request = {
+    //   origin: $scope.directions.origin,
+    //   destination: $scope.directions.destination,
+    //   travelMode: google.maps.DirectionsTravelMode.WALKING
+    // };
+    
+    
+    // $scope.mbclient = $scope.directions.origin;
+    // console.log (mbclient);
+
+    // directionsService.route(request, function (response, status) {
+    //   if (status === google.maps.DirectionsStatus.OK) {
+    //     directionsDisplay.setDirections(response);
+    //     directionsDisplay.setMap($scope.map.control.getGMap());
+    //     directionsDisplay.setPanel(document.getElementById('directionsList'));
+    //     $scope.directions.showList = true;
+    //   } else {
+    //     alert('Google route unsuccesfull!');
+    //   }
+    // });
   }
 
 
@@ -316,9 +310,9 @@ angular.module('controllers', [])
     $scope.search.input = result.description;
     $scope.predictions = [];
 
-    $ionicLoading.show({
-      template: 'Searching restaurants near '+result.description+' ...'
-    });
+    // $ionicLoading.show({
+    //   template: 'Searching restaurants near '+result.description+' ...'
+    // });
 
     // With this result we should find restaurants arround this place and then show them in the map
     // First we need to get LatLng from the place ID
@@ -336,10 +330,10 @@ angular.module('controllers', [])
               places_markers = [];
 
           for (var i = 0; i < nearby_places.length; i++) {
-  		      bound.extend(nearby_places[i].geometry.location);
-  		      var place_marker = createMarker(nearby_places[i]);
+            bound.extend(nearby_places[i].geometry.location);
+            var place_marker = createMarker(nearby_places[i]);
             places_markers.push(place_marker);
-  		    }
+          }
 
           // Create cluster with places
           createCluster(places_markers);

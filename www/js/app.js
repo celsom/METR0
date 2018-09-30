@@ -38,28 +38,17 @@ angular.module('starter', [
     controller: 'MapCtrl'
   })
 
-  .state('nhome', {
-    url: '/nhome',
-    templateUrl: "views/destination.html",
-    controller: 'AjaxCtrl'
+  .state('booking', {
+    url: '/booking',
+    templateUrl: "views/booking.html"
   })
 
-  .state('home', {
-    abstract: true,
-    url: '/home',
-    templateUrl: "views/dash/dash.html",
+  .state('result', {
+    url: '/result',
+    templateUrl: "views/result.html"
   })
 
-  .state('home.dash', {
-      url: "/dashboard",
-      views: {
-        "tab-dest": {
-          templateUrl: "views/dash/dash-destination.html"
-        }
-      }
-    })
-
-  // states for the dashbord buttons
+  // start states for dashbord buttons
   .state('dashboard', {
     url: '/dashboard',
     abstract: true,
@@ -69,33 +58,23 @@ angular.module('starter', [
   .state('dashboard.destination', {
     url: '/destination',
     views: {
-      'tab-dash': {
+      'tab-dest': {
         templateUrl: 'views/dash/dash-destination.html',
-        controller: 'DashCtrl'
+        controller: 'AjaxCtrl'
       }
     }
   })
 
-  // .state('tab.chats', {
-  //     url: '/chats',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'views/tab-chats.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
-
-  .state('place', {
-    url: '/place/:placeId',
-    templateUrl: "views/place.html",
-    controller: 'PlaceCtrl',
-    resolve: {
-      place: function($stateParams, GooglePlacesService) {
-        return GooglePlacesService.getPlaceDetails($stateParams.placeId);
+  .state('dashboard.map', {
+    url: '/map',
+    views: {
+      'tab-map': {
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl'
       }
     }
   })
+  // end states for dashboard buttons
 
-  $urlRouterProvider.otherwise('/home/dashboard');
+  $urlRouterProvider.otherwise('/dashboard/destination');
 })
