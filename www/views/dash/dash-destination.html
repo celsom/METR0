@@ -4,28 +4,27 @@
       <img class="logo" src="./img/metrobuslogo.png" alt="">
       <h2>Bem Vindo ao MetroApp</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>.
+        Selecione a sua rota e a paragem mais proxima.</a>.
       </p>
     </center>
     <label class="item item-input item-select">
-      <span class="input-label">Destination?</span>
+      <span class="input-label">Rota</span>
       <select ng-model="item.route" ng-change="getBusstopNames(item.route)">
-        <option value=''>Select</option>
+        <option value=''>-seleccione-</option>
         <option ng-repeat="route in routeNames" value="{{ route }} ">{{route}}</option>
       </select>
     </label>
     <label class="item item-input item-select">
-      <span class="input-label">Bus Stop?</span>
+      <span class="input-label">Paragem mais proxima</span>
       <select ng-model="item.busstop" ng-change="getModelNames(item.route, item.busstop)" ng-disabled="!item.route">
-        <option value=''>Select</option>
+        <option value=''>-seleccione-</option>
         <option ng-repeat="busstop in busstopNames" value="{{busstop}} ">{{busstop}}</option>
       </select>
     </label>
     <center>
-      <button class="button button-positive" style="margin-top: 20px; width: 200px" ng-click="myFunc()">
-        Verify
+      <button class="button button-positive" style="margin-top: 20px; width: 200px" ui-sref="dashboard.map">
+        Verifique
       </button>
-      <p>Bus stop: [ {{item.busstop}} ].</p>
     </center>
   </ion-content>
 </ion-view>

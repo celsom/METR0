@@ -8,7 +8,9 @@ angular.module('starter', [
   'controllers',
   'services',
   'ngCordova',
-  'ngMap'
+  'ngMap',
+  'google-maps',
+  'ngRoute'
 ])
 
 .run(function($ionicPlatform) {
@@ -40,7 +42,7 @@ angular.module('starter', [
 
   .state('booking', {
     url: '/booking',
-    templateUrl: "views/booking.html"
+    templateUrl: "views/book.html"
   })
 
   .state('result', {
@@ -54,7 +56,6 @@ angular.module('starter', [
     abstract: true,
     templateUrl: 'views/dash/dash.html'
   })
-
   .state('dashboard.destination', {
     url: '/destination',
     views: {
@@ -64,7 +65,6 @@ angular.module('starter', [
       }
     }
   })
-
   .state('dashboard.map', {
     url: '/map',
     views: {

@@ -1,88 +1,51 @@
 <ion-view view-title="MetroBus App">
 
   <ion-content class="example-content">
-    <div class="row geolocation-row">
-      <div ng-click="tryGeoLocation()">
-        <!--  My Location? -->
+      <div class="row geolocation-row">
+        <div ng-click="tryGeoLocation()">
+          <!--  My Location? -->
+        </div>
+      </div> 
 
-      </div>
-    </div>
-
-
-
-    </div>
-
-
-    <div class="row row-no-padding map-row overlay">
+    <div class="row row-no-padding map-row " >
       <div class="col map-col">
-        <!--  <div class="search-container">
-          <div class="list list-inset search-input-outer">
-            <label class="item item-input search-box">
-              <i class="icon ion-ios-search placeholder-icon"></i>
-              <input ng-model="search.input" type="text" placeholder="Search restaurants near place" ng-change="getPlacePredictions(search.input)"/>
-            </label>
-          </div>
-          <div ng-show="predictions.length > 0" class="row row-no-padding search-results">
-            <div class="col">
-              <div class="list location-results-list">
-                <a ng-repeat="prediction in predictions" class="item item-icon-left location-item" ng-click="selectSearchResult(prediction)">
-                  <i class="icon ion-location"></i>
-                  <h3 class="location-name">{{prediction.terms[0].value}}</h3>
-                  <span class="location-desc">{{prediction.description}}</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="map-container" data-tap-disabled="true">
-          <ng-map class="map" zoom="14" center="[{{latitude}}, {{longitude}}]" zoom-control="true" scale-control="false" map-type-control="false" street-view-control="false" map-initialized="init(map)">
-            <custom-marker ng-repeat="cm in customMarkers" position="[{{cm.lat}}, {{cm.lng}}]" class="{{cm.class}}">
-              <h3 class="marker-title">{{cm.text}}</h3>
-            </custom-marker>
-          </ng-map>
-        </div> -->
-
-        <!--     Showing current location with infoWindow<br/>
-          Note: This example requires that you consent to location sharing when
-          prompted by your browser. If you see a blank space instead of the map, this
-          is probably because you have denied permission for location sharing.
-          <br/>
-          <ng-map zoom="10" default-style="true" center="current-location" zoom="6">
-            <info-window position="current-location">
-              <span>Location found using HTML5.</span>
-            </info-window>
-          </ng-map> -->
-
-        <ng-map zoom="14" center="-25.953724,32.588711">
-
- 
+        <ng-map zoom="14" center="-25.953724,32.588711"> 
           <directions draggable="true" travel-mode="WALKING" origin="current-location" destination="{{teste}}">
-
           </directions>
-
-
-        </ng-map>
-
-
-
-
-
-        <br />
-        <br />
-        <!--   <ng-map zoom="14" center="37.7699298, -122.4469157" >
-            <directions
-              draggable="true"
-              travel-mode="DRIVING"
-              origin="Ottawa, Canada"
-              destination="current-location">
-            </directions>
-          </ng-map> -->
-        <button class="col col button button-block button-positive" n>Verifique</button>
-
-
+        </ng-map> 
+        <!-- <button class="col col button button-block button-positive" n>Verifique</button> -->
       </div>
-
-
     </div>
+    
+    <div class="panel panel-default">
+            <div class="panel-body">
+           <!--  <google-map  control="map.control" center="map.center" zoom="map.zoom">
+              <marker coords="marker.center"></marker>
+            </google-map> -->
+
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="origin" class="col-sm-2 control-label">Origem</label>
+                <div class="col-sm-8">
+                  <input type="text" id="origin" class="form-control" ng-model="directions.origin" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="destination" class="col-sm-2 control-label">Destino</label>
+                <div class="col-sm-8">
+                  <input type="text" id="destination" class="form-control" ng-model="directions.destination" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <button class="col col button button-block button-positive" ng-click="getDirections()">Obter coordenadas</button>
+                </div>
+              </div>
+            </form>
+            
+            <div id="directionsList" ng-show="directions.showList" class="panel panel-primary"></div>
+          </div>
+        </div>
+
   </ion-content>
 </ion-view>
