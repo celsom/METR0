@@ -1,6 +1,6 @@
-angular.module('controllers', [])
+angular.module('controllers', ['ui.router'])
   // controller to populate start
-  .controller('AjaxCtrl', function ($scope) {
+  .controller('AjaxCtrl',['$scope','$stateParams','$state', function ($scope,$stateParams,$state) {
     $scope.master = {firstName:"John", lastName:"Doe"};
     // item.busstop = "kkkkkkkkkk";
 
@@ -11,49 +11,97 @@ angular.module('controllers', [])
     };
 
     // Our hierarchical object of manufacturers, car sizes and model names
-    $scope.routes = {
-      "Estacao Central - Costa do Sol": {
-        "Ministerio da Justica": ["1"],
-        "Polana Shopping": ["2"],
-        "Barclays": ["3"],
-        "Cinema Xenon": ["4"],
-        "Bombas Total": ["5"],
-        "Destacamento Femenino": ["6"],
-        "Centro de Conferencias": ["7"],
-        "Maritimo": ["8"],
-        "Baia Mall": ["9"],
-        "Mercado do Peixe": ["10"],
-        "Baia Mall": ["11"],
-        "Triunfo": ["12"]
-      },
-      "Estacao Central - Expresso C do Sol": {
-        "Naval": ["1"],
-        "Southern Su": ["2"],
-        "Maritimo": ["3"],
-        "Baia Mall": ["4"],
-        "Mercado do Peixe": ["5"],
-        "Triunfo": ["6"]
-      },
-      "Estacao central - Museu": {
-        "Pandora": ["1"],
-        "HCM": ["2"],
-        "Oftalmologia": ["3"],
-        "Milano": ["4"],
-        "Cemiterio": ["5"]
-      },
-      "Estacao central - OMM": {
-        "Muncipio": ["1"],
-        "Ministerio do Trabalho": ["2"],
-        "Ronil": ["3"],
-        "Banco Unico": ["4"],
-        "Marien Ngouabi": ["5"],
-        "Capuchinho": ["6"],
-        "PH7 Coop": ["7"],
-        "OMM": ["8"],
-        "Icor": ["9"],
-        "TDM": ["10"]
-      },
-    };
+      // $scope.routes = {
+      //   "Estacao Central - Costa do Sol": {
+      //     "Ministerio da Justica": ["1"],
+      //     "Polana Shopping": ["2"],
+      //     "Barclays": ["3"],
+      //     "Cinema Xenon": ["4"],
+      //     "Bombas Total": ["5"],
+      //     "Destacamento Femenino": ["6"],
+      //     "Centro de Conferencias": ["7"],
+      //     "Maritimo": ["8"],
+      //     "Baia Mall": ["9"],
+      //     "Mercado do Peixe": ["10"],
+      //     "Baia Mall": ["11"],
+      //     "Triunfo": ["12"]
+      //   },
+      //   "Estacao Central - Expresso C do Sol": {
+      //     "Naval": ["1"],
+      //     "Southern Su": ["2"],
+      //     "Maritimo": ["3"],
+      //     "Baia Mall": ["4"],
+      //     "Mercado do Peixe": ["5"],
+      //     "Triunfo": ["6"]
+      //   },
+      //   "Estacao central - Museu": {
+      //     "Pandora": ["1"],
+      //     "HCM": ["2"],
+      //     "Oftalmologia": ["3"],
+      //     "Milano": ["4"],
+      //     "Cemiterio": ["5"]
+      //   },
+      //   "Estacao central - OMM": {
+      //     "Muncipio": ["1"],
+      //     "Ministerio do Trabalho": ["2"],
+      //     "Ronil": ["3"],
+      //     "Banco Unico": ["4"],
+      //     "Marien Ngouabi": ["5"],
+      //     "Capuchinho": ["6"],
+      //     "PH7 Coop": ["7"],
+      //     "OMM": ["8"],
+      //     "Icor": ["9"],
+      //     "TDM": ["10"]
+      //   },
+      // };
+
+      // second Array Start
+
+       $scope.routes = {
+            "Estacao Central - Costa do Sol": {
+              "Ministério da Justiça, Assuntos Constitucionais e Religiosos, Maputo, Moçambique": ["1"],
+              "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique": ["2"],
+              "Barclays Premier Banking, Avenida Julius Nyerere, Maputo, Moçambique": ["3"],
+              "Cinema Xenon": ["4"],
+              "Bombas Total": ["5"],
+              "Praça do Destacamento Feminino, Avenida Kenneth Kaunda, Maputo, Moçambique": ["6"],
+              "Centro de Conferencias": ["7"],
+              "Maritimo": ["8"],
+              "Baia Mall": ["9"],
+              "Mercado de Peixe, Maputo, Moçambique": ["10"],
+              "BAÍA MALL, Avenida da Marginal, Maputo, Moçambique": ["11"],
+              "Triunfo": ["12"]
+            },
+            "Estacao Central - Expresso C do Sol": {
+              "Naval": ["1"],
+              "Southern Su": ["2"],
+              "Maritimo": ["3"],
+              "BAÍA MALL, Avenida da Marginal, Maputo, Moçambique": ["4"],
+              "Mercado de Peixe, Maputo": ["5"],
+              "Triunfo": ["6"]
+            },
+            "Estacao central - Museu": {
+              "Pandora": ["1"],
+              "Maputo Central Hospital, 1653 Avenida Eduardo Mondlane, Maputo": ["2"],
+              "Maputo Central Hospital, 1653 Avenida Eduardo Mondlane, Maputo": ["3"],
+              "Milano": ["4"],
+              "cemitério Ronil, e Av de Maguiguana, Avenida Karl Marx, Maputo": ["5"]
+            },
+            "Estacao central - OMM": {
+              "Muncipio": ["1"],
+              "Ministerio do Trabalho": ["2"],
+              "Roinil, 2205 Avenida Eduardo Mondlane, Maputo 1100": ["3"],
+              "Banco Único, Maputo": ["4"],
+              "Av. Marien Ngouabi, Maputo": ["5"],
+              "Mercado Janet, Av. Mao Tse Tung, Maputo": ["6"],
+              "PH7 Coop": ["7"],
+              "Praça da OMM, Maputo": ["8"],
+              "Instituto Do Coração - ICOR, Maputo": ["9"],
+              "TDM Conference Center": ["10"]
+            },
+          };// second Array End 
+
+          
 
     $scope.routeNames = [];
     for (route in $scope.routes)
@@ -88,17 +136,27 @@ angular.module('controllers', [])
     $scope.myFunc = function () {
       $scope.count++;
     };
-  })
+
+
+    $scope.dashboardMap = function(){
+      console.log($scope.item.busstop);
+      $state.go('dashboard.map',{
+        destination: $scope.item.busstop
+      });
+    }
+
+  }])
   // controller to populate end.
 
   .controller('PlaceCtrl', function ($scope, place) {
     $scope.place = place;
   })
 
-  .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, GooglePlacesService, $document,  $cordovaGeolocation){
+  .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, GooglePlacesService, $document,  $cordovaGeolocation, $stateParams){
   // Central Park location
+      console.log(this);
 
-    $scope.teste = "Ministério da Justiça, Assuntos Constitucionais e Religiosos, Maputo, Moçambique";
+      $scope.teste = $stateParams.destination;
       var maputo = {
         lat: -5.953724,
         lng: 2.588711
@@ -225,14 +283,7 @@ angular.module('controllers', [])
               ],
               imagePath: '../img/i'
             });
-          };
-
-      // $scope.tryGeoLocation = function(){
-      //   $ionicLoading.show({
-      //     template: 'Getting current position ...'
-      //   });
-
-      // }
+          }; 
       
         // Clean map
         cleanMap();
@@ -313,8 +364,7 @@ angular.module('controllers', [])
       WARID CODE
     */
 
-      console.log(this);
-        console.info("LOADED");
+   
            
           // instantiate google map objects for directions
           var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -336,34 +386,39 @@ angular.module('controllers', [])
                });
           });
 
-          // marker object
-          $scope.marker = {
-            center: {
-                latitude: $scope.latitude,
-                longitude: $scope.longitude
+              // marker object
+              $scope.marker = {
+                center: {
+                    latitude: $scope.latitude,
+                    longitude: $scope.longitude
+                }
+              }
+
+            $scope.map = {
+                control: {},
+                center: {
+                    latitude: $scope.latitude,
+                    longitude: $scope.longitude
+                },
+                zoom: 14
             }
-          }
 
-        $scope.map = {
-            control: {},
-            center: {
-                latitude: $scope.latitude,
-                longitude: $scope.longitude
-            },
-            zoom: 14
-        }
-
-
+          console.log("STATEPARAMS")
+          console.info()
           // directions object -- with defaults
           $scope.directions = {
             // origin:  $scope.position1,
-            origin: "Matola, Mozambique",
-            destination: "Maputo , Mozambique",
+            origin: "Maputo, mozambique",
+            destination: $stateParams.destination,
             showList: false
           }
           
           // get directions using google maps api
-          $scope.getDirections = function () {
+          $scope.getDirections = function ($stateParams,$state) {
+            
+            // $scope.item.busstop = '';
+
+
             var request = {
               origin: $scope.directions.origin,
               destination: $scope.directions.destination,

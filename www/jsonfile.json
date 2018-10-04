@@ -1,0 +1,250 @@
+{
+  "Routes": {
+    "PRAÇA DOS HERÓIS": {
+      "paragens": {
+        "1": {
+        "displayName": " Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+        "desc": "Ministério da Justiça, Assuntos Constitucionais e Religiosos, Maputo, Moçambique",
+        "lat": -25.979774,
+        "long": 32.59192170000006
+        },
+        "2": {
+        "displayName": "Polana Shopping Center",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "3": {
+        "displayName": "Barclays",
+        "desc": "Barclays Premier Banking, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97568699999999,
+        "long": 32.59342509999999
+        },
+        "4": {
+        "displayName": "Cinema Xenon",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "5": {
+        "displayName": "Praça do Destacamento Feminino",
+        "desc": " Praça do Destacamento Feminino, Avenida Kenneth Kaunda, Maputo, Moçambique",
+        "lat":  -25.9603815,
+        "long": 32.60263680000003
+        },
+        "6": {
+        "displayName": "Universidade Eduardo Mondlane",
+        "desc": "Universidade Eduardo Mondlane, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.9521498,
+        "long": 32.60356009999998
+        },
+        "7": {
+        "displayName": "Cafe Sol",
+        "desc": "Cafe Sol, Rua Beijo da Mulata, Maputo, Moçambique",
+        "lat": -25.9492522,
+        "long": 32.60544010000001
+        },
+        "8": {
+        "displayName": "BIM",
+        "desc": "Millennium BIM, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.9730681,
+        "long": 32.594745800000055
+        },
+        "9": {
+        "displayName": "Sovestre",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "10": {
+        "displayName": "Ronil",
+        "desc": "Ronil Lda - Sucursal FPLM, Maputo, Moçambique",
+        "lat": -25.930747,
+        "long": 32.588936200000035
+        },
+        "11": {
+        "displayName": "Mavalane",
+        "desc": "Hospital Mavalane, Maputo, Moçambique",
+        "lat": -25.9315646,
+        "long": 32.58621900000003
+        }
+      }
+    },
+    "Costa do sol": {
+     "paragens": {
+        "1": {
+        "displayName": " Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+        "desc": "Ministério da Justiça, Assuntos Constitucionais e Religiosos, Maputo, Moçambique",
+        "lat": -25.979774,
+        "long": 32.59192170000006
+        },
+          "2": {
+        "displayName": "Polana Shopping Center",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+         "3": {
+        "displayName": "Barclays",
+        "desc": "Barclays Premier Banking, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97568699999999,
+        "long": 32.59342509999999
+        },
+        "4": {
+        "displayName": "Cinema Xenon",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "5": {
+        "displayName": "Bombas Total",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "6": {
+        "displayName": "Destacamento Feminino",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "7": {
+        "displayName": "Clube Naval",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.97702839999999,
+        "long": 32.592678999999976
+        },
+        "8": {
+        "displayName": "Southern Sun",
+        "desc": "Southern Sun Maputo, Maputo, Moçambique",
+        "lat":   -25.95907,
+        "long": 32.60538199999996
+        },
+        "9": {
+        "displayName": "Maritimo",
+        "desc": "Clube Maritimo, Maputo, Moçambique",
+        "lat": 1000,
+        "long":1000 
+        },
+        "10": {
+        "displayName": "Centro De Conferencias",
+        "desc": "Polana Shopping Center, Avenida Julius Nyerere, Maputo, Moçambique",
+        "lat": -25.9543551,
+        "long":   32.6092592
+        },
+        "11": {
+        "displayName": "Baia Mall",
+        "desc": "BAÍA MALL, Avenida da Marginal, Maputo, Moçambique",
+        "lat": -25.9440691,
+        "long": 32.621225200000026
+        },
+        
+          "11": {
+        "displayName": "Mercado Do Peixe",
+        "desc": "Mercado de Peixe, Maputo, Moçambique",
+        "lat": -25.935206,
+        "long": 32.62862169999994
+        },
+         "11": {
+        "displayName": "Triunfo",
+        "desc": "",
+        "lat":100 ,
+        "long": 100
+        }
+      }
+    },
+    "Standard Bank Museu": {
+      "paragens": {
+        "1": {
+        "displayName": "Correios",
+        "desc": "",
+        "lat":1000 ,
+        "long":1000 
+        },
+        "2": {
+        "displayName": "33 Andares",
+        "desc": " Edifício 33 Andares, Rua da Imprensa, Maputo, Moçambique",
+        "lat":  -25.9738241,
+        "long": 32.57408179999993
+        },
+         "2": {
+        "displayName": "Mcel",
+        "desc": "",
+        "lat":1000 ,
+        "long":1000 
+        },
+         "2": {
+        "displayName": "Agua",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat": 12345,
+        "long": 67890
+        },
+         "2": {
+        "displayName": "Fortaleza",
+        "desc": "Fortress of Maputo, Maputo, Moçambique",
+        "lat":  -25.9749582,
+        "long":  32.57039469999995
+        },
+         "2": {
+        "displayName": "JAT 1",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat": -25.9735452,
+        "long": 32.5701396
+        },
+         "2": {
+        "displayName": "BCI",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat": -25.9621061,
+        "long": 32.5712208
+        }
+      }
+    },
+    "Museu": {
+      "paragens": {
+        "1": {
+        "displayName": "Cemeterio",
+        "desc": "",
+        "lat": -25.962957,
+        "long": 32.574589
+        },
+        "2": {
+        "displayName": "Pandora",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat": -25.9666311,
+        "long": 32.579591
+        },
+         "3": {
+        "displayName": "EDM",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat": -25.9370531,
+        "long": 32.5555993
+        },
+         "4": {
+        "displayName": "HCM",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat": -25.969518,
+        "long":  32.588792
+        },
+         "5": {
+        "displayName": "Oftamologia",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "lat":-25.970158 ,
+        "long": 32.588250
+        },
+         "6": {
+        "displayName": "Milano",
+        "desc": "",
+         "lat": -25.975161,
+         "long": 32.590302
+        },
+         "7": {
+        "displayName": "Museu",
+        "desc": "",
+        "lat": -25.977098,
+        "long": 32.586706
+        }
+        
+      }
+    }
+  }
+}

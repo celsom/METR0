@@ -66,7 +66,7 @@ angular.module('starter', [
     }
   })
   .state('dashboard.map', {
-    url: '/map',
+    url: '/map/:destination',
     views: {
       'tab-map': {
         templateUrl: 'views/map.html',
