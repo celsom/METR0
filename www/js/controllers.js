@@ -192,6 +192,14 @@ angular.module('controllers', ['ui.router'])
         $scope.$apply();
       };
 
+
+      // start button color
+        $scope.activeButton = function() {
+       $scope.isActive = !$scope.isActive;
+       };
+
+      // end button color
+
       var showPlaceInfo = function(place){
             $state.go('place', {placeId: place.place_id});
           },
