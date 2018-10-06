@@ -1,4 +1,19 @@
 angular.module('controllers', ['ui.router'])
+
+ 
+
+
+// .controller('mainCtrl', function($scope) {
+//   $scope.user = {
+//     level: 0
+//   }
+// })
+
+
+
+ 
+
+
   // controller to populate start
   .controller('AjaxCtrl',['$scope','$stateParams','$state', function ($scope,$stateParams,$state) {
     $scope.master = {firstName:"John", lastName:"Doe"};
@@ -156,6 +171,10 @@ angular.module('controllers', ['ui.router'])
   // Central Park location
       console.log(this);
 
+       $scope.user1 = {
+          level: 0
+        }
+
       $scope.teste = $stateParams.destination;
       var maputo = {
         lat: -5.953724,
@@ -251,48 +270,53 @@ angular.module('controllers', ['ui.router'])
           },
           createCluster = function(markers){
             // var markerClusterer = new MarkerClusterer($scope.mymap, markers, {
-            $scope.markers_cluster = new MarkerClusterer($scope.mymap, markers, {
-              styles: [
-                {
-                  url: '../img/i1.png',
-                  height: 53,
-                  width: 52,
-                  textColor: '#FFF',
-                  textSize: 12
-                },
-                {
-                  url: '../img/i2.png',
-                  height: 56,
-                  width: 55,
-                  textColor: '#FFF',
-                  textSize: 12
-                },
-                {
-                  url: '../img/i3.png',
-                  height: 66,
-                  width: 65,
-                  textColor: '#FFF',
-                  textSize: 12
-                },
-                {
-                  url: '../img/i4.png',
-                  height: 78,
-                  width: 77,
-                  textColor: '#FFF',
-                  textSize: 12
-                },
-                {
-                  url: '../img/i5.png',
-                  height: 90,
-                  width: 89,
-                  textColor: '#FFF',
-                  textSize: 12
-                }
-              ],
-              imagePath: '../img/i'
-            });
+            // $scope.markers_cluster = new MarkerClusterer($scope.mymap, markers, {
+            //   styles: [
+            //     {
+            //       url: '../img/i1.png',
+            //       height: 53,
+            //       width: 52,
+            //       textColor: '#FFF',
+            //       textSize: 12
+            //     },
+            //     {
+            //       url: '../img/i2.png',
+            //       height: 56,
+            //       width: 55,
+            //       textColor: '#FFF',
+            //       textSize: 12
+            //     },
+            //     {
+            //       url: '../img/i3.png',
+            //       height: 66,
+            //       width: 65,
+            //       textColor: '#FFF',
+            //       textSize: 12
+            //     },
+            //     {
+            //       url: '../img/i4.png',
+            //       height: 78,
+            //       width: 77,
+            //       textColor: '#FFF',
+            //       textSize: 12
+            //     },
+            //     {
+            //       url: '../img/i5.png',
+            //       height: 90,
+            //       width: 89,
+            //       textColor: '#FFF',
+            //       textSize: 12
+            //     }
+            //   ],
+            //   imagePath: '../img/i'
+            // });
           }; 
       
+
+
+          
+
+
         // Clean map
         cleanMap();
         $scope.search.input = "";
@@ -446,4 +470,50 @@ angular.module('controllers', ['ui.router'])
           }
 
 
-});
+})
+
+  // START OF DIRECTIVE
+  .directive('userInfoCard', function() {
+  return {
+    templateUrl: "views/userInfoCard.html",
+    restrict: "EA",
+    scope: {
+      user: '='
+    },
+    link: function(scope, el, attrs) {
+      scope.nextState = function() {
+        scope.user.level++;
+        scope.user.level = scope.user.level % 3;
+        setState();
+      }
+      
+      function setState() {
+
+        switch(scope.user.level) {
+          case 0:
+          console.log(0);
+            el.find('.reserva').addClass('btn-success');
+            el.find('.reserva').removeClass('btn-primary');
+            el.find('.reserva').removeClass('btn-danger');
+            break;
+          case 1:
+          console.log(1);
+            el.find('.reserva').addClass('btn-primary');
+            el.find('.reserva').removeClass('btn-success');
+            el.find('.reserva').removeClass('btn-danger');
+            break;
+          case 2:
+          console.log(2);
+            el.find('.reserva').addClass('btn-danger');
+            el.find('.reserva').removeClass('btn-primary');
+            el.find('.reserva').removeClass('btn-success');
+            break;
+        }
+      }
+      
+      setState();
+    }
+  }
+})
+
+    // END OF DIRECTIVE
