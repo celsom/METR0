@@ -1,0 +1,38 @@
+
+
+<ion-view view-title="Mimmos - Menu" scroll="true" class="bghome"> 
+	<ion-nav-buttons side="primary">
+      <button class="btn button" ui-sref="rest.search" style="font-size: 1.3rem;">
+        <i class="fas fa-shopping-cart"></i>
+        <!-- <span class="badge">4</span> -->
+      </button>
+    </ion-nav-buttons>
+  <ion-content>
+  <br>
+
+  <div ng-controller="mainController as main">
+     
+        <div>
+         <ion-list ng-repeat="item in main.items">
+        <ion-item class="item item-thumbnail-left" >  
+              <img ng-src="{{item.img}}" style="border-radius:50%;">                
+              <p><h2>{{item.name}}</h2></p> 
+              <h4 >{{item.price }} MZN</h4>
+              <h4>{{item.quantity}}</h4>
+              <select class="dropdown">
+              <option>{{item.select.i1}}</option>
+              <option selected>{{item.select.i2}}</option>
+              <option>{{item.select.i3}}</option>
+          </select>
+          <button ng-click="main.increaseItemAmount(item)" class="button button-positive">+</button>
+                 <button ng-click="main.decreaseItemAmount(item)" class="button button-assertive">-</button>
+                 <button ng-click="main.addToCart(item)" ng-show="item.showAddToCart && !item.addedToCart" class="button button-positive">Add to Cart</button>
+        
+        </ion-item>
+      <br>
+
+        </ion-list>
+          
+</ion-content>
+
+</ion-view>

@@ -1,0 +1,84 @@
+/* Empty. Add your own CSS if you like */
+.card{
+ height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#item1{
+  top: 0;
+  text-align: center;
+  height: 100px;
+  width: 100%;
+     color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  background:rgba(255,255,255,0.8);
+   overflow: hidden;
+ top: 0;
+  position: relative;
+ 
+}
+  #list1{
+   
+     margin: auto;
+    width: 95%;
+    
+    /*padding: 10px;*/
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  }
+.item{
+  width: 100%;
+  align-content: center;
+
+}
+
+.bgimg {
+    background-image: url('../img/pizza.jpg');
+}
+
+.bgimg1 {
+    background-image: url('../img/pizza1.jpg');
+}
+
+.bgimg2 {
+    background-image: url('../img/pizza2.jpg');
+}
+
+
+#qty{
+  padding-left: 20px;
+  width: 100px;
+}
+
+.wrapper img {
+
+  position: relative;
+  align-content: center;
+  /* border-radius:50px; */
+  width: 50px;
+}
+
+.price{
+  color: red;
+ text-align: right;
+
+}
+
+.dropdown{
+ text-align: right;
+ 
+}
+
+.restitle{
+  text-align: center;
+}
+
+.item{
+	background:rgba(255,255,255,0.8);
+}
+
+.bghome{
+	 background-image: url('../img/pizza2.jpg');
+}

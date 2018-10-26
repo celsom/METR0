@@ -1,0 +1,24 @@
+
+<ion-view view-title="Mimmos" scroll="true" class="bghome">
+	<ion-content>
+  <br>
+
+<h1 class="restitle"> Menu </h1>
+	<div class="list" ng-repeat="item in items">
+		<div class="item item-avatar">
+		<img ng-src="{{item.img}}" style="border-radius:50%;">
+		<h2>{{item.title}}</h2>
+		<h4>{{item.price}} MZN</h4>
+		<select class="dropdown">
+		      <option>Small</option>
+		      <option selected>Medium</option>
+		      <option>Large</option>
+		</select>
+		<a class="item item-icon-left assertive" ui-sref="app.search">
+		Place Order
+		</a>
+		</div>
+	</div>
+</ion-content>
+
+</ion-view>

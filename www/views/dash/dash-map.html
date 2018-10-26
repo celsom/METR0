@@ -1,13 +1,54 @@
-<ion-view view-title="MetroBus App">
-  <ion-tabs class="tabs-positive tabs-icon-top">
-      <ion-tab title="Home" icon="ion-home" ui-sref="home.destination">
-          <ion-nav-view name="tab-dest"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Navigate" icon="ion-compass" ui-sref="home.this">
-          <ion-nav-view name="tab-navigation"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Home" icon="ion-settings" ui-sref="home.this">
-          <ion-nav-view name="tab-settings"></ion-nav-view>
-      </ion-tab>
-  </ion-tabs>
+<ion-view view-title="Txeka App" ng-controller="AjaxCtrl">
+  <ion-content class="bg">
+    <center>
+      <img class="img-responsive" src="./img/logo1.png" style="width: 200px">
+      <p>
+        O poder nas tuas mãos</a>
+      </p>
+      <div class="row responsive-xm">
+        <a ui-sref="map" class="col">
+          <div class="thumbnail" style="padding-top: .5em">
+            <center style="font-size: 2.5em;">
+              <i class="fas fa-bus-alt"></i>
+            </center>
+            <div class="caption">
+              <h3>Transportes</h3>
+            </div>
+          </div>
+        </a>
+        <a ui-sref="rest.restaurants" class="col">
+          <div class="thumbnail" style="padding-top: .5em">
+            <center style="font-size: 2.5em;">
+              <i class="fas fa-utensils"></i>
+            </center>
+            <div class="caption">
+              <h3>Restaurantes</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="row responsive-xm">
+        <a ui-sref="shop.home" class="col">
+          <div class="thumbnail" style="padding-top: .5em">
+            <center style="font-size: 2.5em;">
+              <i class="fas fa-store"></i>
+            </center>
+            <div class="caption">
+              <h3>Lojas</h3>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="col">
+          <div class="thumbnail" style="padding-top: .5em">
+            <center style="font-size: 2.5em;">
+              <i class="fas fa-hotel"></i>
+            </center>
+            <div class="caption">
+              <h3>Farmacias</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+    </center>
+  </ion-content>
 </ion-view>

@@ -1,0 +1,31 @@
+<ion-view view-title="Casual Men Shoes">
+  <ion-content>
+  	<div class="col-lg-12">
+  		<h2>Daily Casual Wears</h2>
+  	</div>
+  	
+    <ion-list>
+      <ion-item ng-repeat="casual in casuals" ng-click="login()">
+        <div class="card">
+			 <div class="item item-avatar">
+			    <img ng-src="{{casual.img}}">
+			    <h2>{{casual.title}}<h2>
+			    <p></p>
+			 </div>
+
+			  <div class="item item-image">
+			    <img ng-src="{{casual.img}}">
+			    
+			  </div>
+			  <div class="item item-divider">
+			  	<p>
+			      <a href="#" class="subdued">1 Like</a>
+			      <a href="#" class="subdued">5 Comments</a>
+			    </p>
+			  </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

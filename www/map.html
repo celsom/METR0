@@ -1,0 +1,22 @@
+<ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+      <a ui-sref="dashboard.home" class="button">back</a>
+    </div>
+    <h1 class="title">Txeka</h1>    
+  </ion-header-bar>
+
+    <ion-content scroll="false">
+    <label class="item mapa item-input">
+         
+    
+        
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Vai Para aonde?">
+    </label>
+    
+      <map on-create="mapCreated(map)"></map>
+    </ion-content>
+
+    <ion-footer-bar class="bar-stable">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+    </ion-footer-bar>

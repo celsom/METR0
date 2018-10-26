@@ -1,0 +1,31 @@
+<ion-view view-title="Jordans">
+  <ion-content>
+  	<div class="col-lg-12">
+  		<h2>Jordan Retro 10 and Footlockers</h2>
+  	</div>
+  	
+    <ion-list>
+      <ion-item ng-repeat="jordan in jordans" ng-click="login()"
+        <div class="card">
+			 <div class="item item-avatar">
+			    <img ng-src="{{jordan.img}}">
+			    <h2>{{jordan.title}}<h2>
+			    <p></p>
+			 </div>
+
+			  <div class="item item-image">
+			    <img ng-src="{{jordan.img}}">
+			    
+			  </div>
+			  <div class="item item-divider">
+			  	<p>
+			      <a href="#" class="subdued">1 Like</a>
+			      <a href="#" class="subdued">5 Comments</a>
+			    </p>
+			  </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-view view-title="Formal Shoes">
+  <ion-content>
+  	<div class="col-lg-12">
+  		<h2>Stylist Formal Shoes</h2>
+  	</div>
+  	
+    <ion-list>
+      <ion-item ng-repeat="formal in formals" ng-click="login()">
+        <div class="card">
+			 <div class="item item-avatar">
+			    <img ng-src="{{formal.img}}">
+			    <h2>{{formal.title}}<h2>
+			    <p></p>
+			 </div>
+
+			  <div class="item item-image">
+			    <img ng-src="{{formal.img}}">
+			    
+			  </div>
+			  <div class="item item-divider">
+			  	<p>
+			      <a href="#" class="subdued">1 Like</a>
+			      <a href="#" class="subdued">5 Comments</a>
+			    </p>
+			  </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

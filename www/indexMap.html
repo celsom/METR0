@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcP-C2_g17h8ao3_M551NZ1nKxOw_-tP0&callback=true"></script>
+
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcP-C2_g17h8ao3_M551NZ1nKxOw_-tP0&callback=initMap"></script> -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/ncontrollers.js"></script>
+    <script src="js/directives.js"></script>
+
+    <style>
+      .item{
+      position: relative;
+      top: 31px;
+      left: 0px;
+      border-radius: 20px;
+      width: 223px;
+
+      height: 31px;
+
+      padding-left: 33px;
+
+      margin-left: 46px;
+      }
+      
+
+       map {
+      /*height: 100vh;
+      width: 60vh;*/
+      margin-top: -44px;
+      height: 90vh;
+    }
+    </style>
+  </head>
+
+  <body ng-app="starter" ng-controller="MapCtrl">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Txeka</h1>
+     <!--  <ion-nav-back-button class="button-clear button-icon icon ion-ios7-arrow-back"></ion-nav-back-button>
+      <ion-nav-buttons side="left"> -->
+
+        <ion-nav-back-button class="button-clear">
+          <i class="ion-arrow-left-c"></i>Back
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+
+    </ion-header-bar>
+    <ion-nav-view name="mainContent" animation="slide-left-right"></ion-nav-view>
+
+    <ion-content scroll="false">
+     
+    
+    
+
+
+       <label class="item item-input">
+         
+    
+        
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Vai Para aonde?">
+    </label>
+    
+      <map on-create="mapCreated(map)"></map>
+    </ion-content>
+
+    <ion-footer-bar class="bar-stable">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+    </ion-footer-bar>
+  </body>
+</html>

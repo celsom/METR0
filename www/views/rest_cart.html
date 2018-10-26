@@ -1,0 +1,47 @@
+<ion-view view-title="Cart" >
+  <ion-content>
+    <!-- <h1 class="restitle">Cart</h1>
+     <ion-list>
+     <ion-item class="item item-thumbnail-left" >  
+              <img ng-src="{{cart.img}}" style="border-radius:50%;">                
+              <p><h2>{{cart.title}}</h2></p> 
+              <h4 >{{cart.price}} MZN</h4>
+
+  </ion-item>
+<br>
+
+  </ion-list> -->
+  <div ng-controller="cartController as cart">
+        <h2>Cart </h2>
+
+        <ion-list>
+     <ion-item class="item item-thumbnail-left" ng-repeat="item in cart.cartStorage.items">  
+              <img ng-src="{{item.img}}" style="border-radius:50%;">                
+              <h2>{{item.name}}</h2> 
+              <h4 >{{item.price }} MZN</h4>
+              <h4>{{item.quantity}}</h4>
+              <button ng-click="cart.increaseItemAmount(item, total)" class="button button-positive">+</button>
+              <button ng-click="cart.decreaseItemAmount(item)" class="button button-assertive">-</button>
+              <button ng-click="cart.removeFromCart(item)" class="button button-assertive">Remove from Cart</button>
+                <h2>Total: {{item.total}}</h2>
+
+
+
+  </ion-item>
+          <h1>total: {{grandTotal}}</h1>
+          
+<br>
+
+  </ion-list>
+</div>
+  </ion-content>
+</ion-view>
+
+<!-- <ion-view view-title="Search">
+ <ion-content>
+  <div ng-controller="cntrl1">
+    <h1>{{title}}</h1>
+    <span>{{ReceivedData}}</span>
+  </div>
+</ion-content>
+</ion-view> -->
